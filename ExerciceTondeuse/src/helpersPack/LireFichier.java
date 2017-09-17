@@ -10,48 +10,6 @@ import java.util.List;
 import jardinPack.Jardin;
 import tondeusePack.Tondeuse;
 
-class NombreInstructionsTondeuseExceptions extends Exception{ 
-	  public NombreInstructionsTondeuseExceptions(){
-	    System.out.println("Le nombre d'instructions pour les tondeuses est impair.");
-
-	  }  
-	}
-
-class NombreInstructionsGrilleExceptions extends Exception{ 
-	  public NombreInstructionsGrilleExceptions(){
-	    System.out.println("Les instructions pour les coordonnées de la grille sont insuffisantes.");
-
-	  }  
-	}
-
-/**
- * 
- * On peut ajouter ces exceptions personnalisées, pour des raison esthetiques, pour le traitement du fichier cependant ces cas renvoient déjà une exception qui arrète le programme
- *
- **/
-/*
-class NombreInstructionsGrilleNonIntExceptions extends Exception{ 
-	  public NombreInstructionsGrilleNonIntExceptions(){
-	    System.out.println("Les instructions pour les coordonnées de la grille ne sont pas des chiffres.");
-
-	  }  
-	}
-
-class NombreInstructionsTondeusesCoordonneesInvalidesExceptions extends Exception{ 
-	  public NombreInstructionsTondeusesCoordonneesInvalidesExceptions(){
-	    System.out.println("Les instructions pour les coordonnées des tondeuses sont invalides.");
-
-	  }  
-	}
-
-class NombreInstructionsTondeusesInvalidesExceptions extends Exception{ 
-	  public NombreInstructionsTondeusesInvalidesExceptions(){
-	    System.out.println("Les instructions pour le déplacement des tondeuses sont invalides.");
-
-	  }  
-	}
-*/
-
 public class LireFichier {
 
 	static int nombreTondeuses;
@@ -99,14 +57,15 @@ public class LireFichier {
 		 * '/2' (pour avoir le nombre de tondeuses car il y a deux lignes d'instructions pour chaque tondeuse)
 		 */
 		// On teste si le nombre d'instructions pour les tondeuses est pair
-		if(((listeInstructions.size()-1)/2)%2==0){
+		//if(((listeInstructions.size()-1)/2)%2==0){
 			setNombreTondeuses((listeInstructions.size()-1)/2);
 			
 			// On met les premiers caractères de la ligne dans un tableau, si 
 			String [] casesJardin = listeInstructions.get(0).split(" ");
 			// On teste si le nombre de coordonnées de la grille est pair
-			if(casesJardin.length%2==0){
-				
+			//if(casesJardin.length%2==0){
+			
+			// TODO check if int and not negative
 			int casesJardinX = Integer.parseInt(casesJardin[0]);
 			int casesJardinY = Integer.parseInt(casesJardin[1]);
 			
@@ -120,33 +79,35 @@ public class LireFichier {
 						String[] positionsTondeuse=listeInstructions.get(premiereTondeuse-1).split(" ");
 						String[] instructionsTondeuse=listeInstructions.get(premiereTondeuse).split("");
 						Tondeuse tondeuse = new Tondeuse();
+						
+						//TODO check if int and not negative
+						
 						// On créé un objet Tondeuse qu'on ajoute dans la liste des tondeuses
 						tondeuse.tondeuseConstructor(i,Integer.parseInt(positionsTondeuse[0]),Integer.parseInt(positionsTondeuse[1]),positionsTondeuse[2]);
-						//tondeuse.getStatutTondeuse();
+						tondeuse.getStatutTondeuse();
 						// Ajout dans la liste des tondeuses
 						tondeuses.add(tondeuse);
-						/*
-						System.out.println("Départ tondeuse "+i+" : ");
-						tondeuses.get(i).getStatutTondeuse();
-						*/
+						
+						//System.out.println("Départ tondeuse "+i+" : ");
+						//tondeuses.get(i).getStatutTondeuse();
+						
 							// On traite les instructions de la tondeuse
 							for(int y = 0 ;y!=instructionsTondeuse.length;y++){
-								// System.out.println("instruction: " +instructionsTondeuse[y]);
+								//System.out.println("instruction: " +instructionsTondeuse[y]);
 								tondeuses.get(i).instructionTondeuse(instructionsTondeuse[y],tondeuses.get(i).getTondeuseOrientation(),tondeuses.get(i).getPosXTondeuse(),tondeuses.get(i).getPosYTondeuse());
 								//tondeuses.get(i).getStatutTondeuse();
 							}
+							premiereTondeuse=premiereTondeuse+2;
 						}
-						
-						premiereTondeuse=premiereTondeuse+2;
-		
+
 						getStatutToutesTondeuses();
-		}else{
-			throw new NombreInstructionsGrilleExceptions();
-		}
+		//}else{
+			//throw new NombreInstructionsGrilleExceptions();
+		//}
 		
-		}else{
-			throw new NombreInstructionsTondeuseExceptions();
-		}
+		//}else{
+			//throw new NombreInstructionsTondeuseExceptions();
+		//}
 
 		}		
 		catch (Exception e){
@@ -158,9 +119,9 @@ public class LireFichier {
 	 * Renvoie le statut de toutes les tondeuses
 	 */
 	public static void getStatutToutesTondeuses(){
-		for(int i = 0 ;i!=getNombreTondeuses();i++){ 
-			System.out.println("Arrivée tondeuse "+i+" : ");
-			tondeuses.get(i).getStatutTondeuse();
+		for(int z = 0 ;z!=getNombreTondeuses();z++){ 
+			System.out.println("Arrivée tondeuse "+z+" : ");
+			tondeuses.get(z).getStatutTondeuse();
 		}
 	}
 	
