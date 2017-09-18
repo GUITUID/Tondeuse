@@ -187,9 +187,12 @@ public class LireFichier {
 								tondeuses.get(i).instructionTondeuse(instructionsTondeuse[y],tondeuses.get(i).getTondeuseOrientation(),tondeuses.get(i).getPosXTondeuse(),tondeuses.get(i).getPosYTondeuse());
 								//tondeuses.get(i).getStatutTondeuse();
 							}
+							
+							premiereTondeuse=premiereTondeuse+2;
 						}
 						
-						premiereTondeuse=premiereTondeuse+2;
+				
+			
 		
 						getStatutToutesTondeuses();
 		}else{
