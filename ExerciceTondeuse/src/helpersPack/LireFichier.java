@@ -12,6 +12,7 @@ import tondeusePack.Tondeuse;
 
 class NombreInstructionsTondeuseExceptions extends Exception {
 	private static final long serialVersionUID = 1L;
+
 	public NombreInstructionsTondeuseExceptions() {
 		System.out.println("Le nombre d'instructions pour les tondeuses est impair.");
 	}
@@ -19,6 +20,7 @@ class NombreInstructionsTondeuseExceptions extends Exception {
 
 class NombreInstructionsGrilleExceptions extends Exception {
 	private static final long serialVersionUID = 1L;
+
 	public NombreInstructionsGrilleExceptions() {
 		System.out.println("Les instructions pour les coordonnées de la grille sont insuffisantes.");
 	}
@@ -26,6 +28,7 @@ class NombreInstructionsGrilleExceptions extends Exception {
 
 class InstructionsNonIntExceptions extends Exception {
 	private static final long serialVersionUID = 1L;
+
 	public InstructionsNonIntExceptions() {
 		System.out.println("Les instructions pour les coordonnées ne sont pas des nombres.");
 	}
@@ -33,6 +36,7 @@ class InstructionsNonIntExceptions extends Exception {
 
 class InstructionsTondeusesCoordonneesInvalidesExceptions extends Exception {
 	private static final long serialVersionUID = 1L;
+
 	public InstructionsTondeusesCoordonneesInvalidesExceptions() {
 		System.out.println("Les instructions pour les coordonnées des tondeuses sont invalides.");
 	}
@@ -40,6 +44,7 @@ class InstructionsTondeusesCoordonneesInvalidesExceptions extends Exception {
 
 class InstructionsTondeusesInvalidesExceptions extends Exception {
 	private static final long serialVersionUID = 1L;
+
 	public InstructionsTondeusesInvalidesExceptions() {
 		System.out.println("Les instructions pour le déplacement des tondeuses sont invalides.");
 	}
@@ -53,9 +58,9 @@ class NombreNegatifExceptions extends Exception {
 	}
 }
 
-
 class NonStringExceptions extends Exception {
 	private static final long serialVersionUID = 1L;
+
 	public NonStringExceptions() {
 		System.out.println("L'instruction n'est pas une chaine de caractère.");
 	}
@@ -66,8 +71,8 @@ public class LireFichier {
 	 * @param valeur
 	 * @return
 	 * @throws InstructionsNonIntExceptions
-	 * </br>
-	 * Vérifie si la valeur est un nombre (int)
+	 *             </br>
+	 *             Vérifie si la valeur est un nombre (int)
 	 */
 	public static boolean isNombre(String valeur) throws InstructionsNonIntExceptions {
 		// Regex \\d : Un chiffre, équivalent à : [0-9]
@@ -79,12 +84,12 @@ public class LireFichier {
 		}
 	}
 
-	/** 
+	/**
 	 * @param valeur
 	 * @return
 	 * @throws InstructionsNonIntExceptions
-	 * </br>
-	 * Vérifie si la valeur est un nombre (int)
+	 *             </br>
+	 *             Vérifie si la valeur est un nombre (int)
 	 */
 	public static boolean isString(String valeur) throws NonStringExceptions {
 		// Regex \\d : Un chiffre, équivalent à : [0-9]
@@ -101,8 +106,8 @@ public class LireFichier {
 	 * @param valeur
 	 * @return
 	 * @throws NombreNegatifExceptions
-	 * </br>
-	 * Vérifie si la valeur est positive
+	 *             </br>
+	 *             Vérifie si la valeur est positive
 	 */
 	public static boolean isPositif(int valeur) throws NombreNegatifExceptions {
 		if (valeur > 0) {
@@ -118,7 +123,7 @@ public class LireFichier {
 	/**
 	 * 
 	 * @return nombreTondeuses </br>
-	 * 		Retourne le nombre de tondeuses obtenues lors de la lecture du
+	 *         Retourne le nombre de tondeuses obtenues lors de la lecture du
 	 *         fichier
 	 */
 	public static int getNombreTondeuses() {
@@ -129,7 +134,7 @@ public class LireFichier {
 	 * 
 	 * @param nombreTondeusesFromFichier
 	 *            </br>
-	 * 			Paramètre le nombre de tondeuses obtenues lors de la lecture
+	 *            Paramètre le nombre de tondeuses obtenues lors de la lecture
 	 *            du fichier
 	 */
 	public static void setNombreTondeuses(int nombreTondeusesFromFichier) {

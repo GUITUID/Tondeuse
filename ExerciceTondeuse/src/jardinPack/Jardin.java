@@ -1,16 +1,15 @@
 package jardinPack;
 
-/*
- * Un jardin 
- */
 public class Jardin {
 	
 	static int maxX;
 	static int maxY;
 	
 	/**
-	 * @return 
 	 * 
+	 * @param x
+	 * @param y
+	 * @return jardin
 	 */
 	public static Object[][] InitSizeJardin(int x,int y){
 		setMaxX(x);
@@ -34,15 +33,31 @@ public class Jardin {
 		return jardin;
 	}
 	
+	/**
+	 * 
+	 * @param x
+	 */
 	public static void setMaxX(int x){
 		maxX=x+1;
 	}
+	/**
+	 * 
+	 * @param y
+	 */
 	public static void setMaxY(int y){
 		maxY=y+1;
 	}
+	/**
+	 * 
+	 * @return Maximum de X
+	 */
 	public static int getMaxX(){
 		return maxX;
 	}
+	/**
+	 * 
+	 * @return Maximum de Y
+	 */
 	public static int getMaxY(){
 		return maxY;
 	}
