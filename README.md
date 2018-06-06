@@ -1,4 +1,11 @@
+# Retour de Xebia:
 
+l’exercice a permis de déceler des manquements techniques sur certains concepts, les termes attendus n’y étant pas :
+   - Pas de modélisation objet.
+   - Pas de séparation des responsabilités.
+   - Pas de test.
+   - Mauvaise gestion de la ressource fichier.
+   - Binaires et fichiers IDE dans le repo git.
 
 # Tondeuse
 Xebia - Tondeuse
