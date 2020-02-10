@@ -1,3 +1,7 @@
+# Statut:
+
+Echec du test
+
 # Retour de Xebia:
 
 l’exercice a permis de déceler des manquements techniques sur certains concepts, les termes attendus n’y étant pas :
