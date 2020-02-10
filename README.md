@@ -1,6 +1,4 @@
-# Statut:
-
-Echec du test
+En 2017, j'ai passé un entretien chez Xebia qui fait passer le test technique suivant lors du processus de recrutement, le retour sur les résultats du test a été négatif. 
 
 # Retour de Xebia:
 
@@ -11,7 +9,9 @@ l’exercice a permis de déceler des manquements techniques sur certains concep
    - Mauvaise gestion de la ressource fichier.
    - Binaires et fichiers IDE dans le repo git.
 
-# Tondeuse
+# Consigne:
+
+## Tondeuse:
 Xebia - Tondeuse
 
 Architecte / Développeur – Conception Objet
